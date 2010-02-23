@@ -1,0 +1,6 @@
+!.gitignore
+*.log
+*.pid
+*.tmp
+*~
+.DS_Store

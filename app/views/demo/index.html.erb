@@ -1,0 +1,14 @@
+<h3>w2uconv::demo</h3>
+<hr>
+<div>
+  Enter some wylie :
+  <%= text_field_tag :input_field %>
+  <%= observe_field :input_field, :url=>{ :action => :convert },
+        :frequency => 0.1,
+        :update => "erg",
+        :with => 'input_field' %>
+  :=>
+  <span id="erg"></span>
+<div/>
+<hr>
+
