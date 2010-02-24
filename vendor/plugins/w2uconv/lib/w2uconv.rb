@@ -14,7 +14,7 @@ module W2uconv
         if is_a_numeric?(s)
           erg = erg + convert_number(s)
         else
-          if ["|",";"].include?(s)
+          if ["/",";"].include?(s)
             erg = erg + Lists.tuc(s)
           else
             erg = erg + convert_sylable(s)    # convert each sylable s in arr
@@ -77,10 +77,10 @@ module W2uconv
             if shad
               if has_shad_result.at(1)
                 erg = erg + Lists.tuc(".")
-                erg = erg + Lists.tuc("|")
+                erg = erg + Lists.tuc("/")
               else
                 if not has_shad_result.at(2)
-                  erg = erg + Lists.tuc("|")
+                  erg = erg + Lists.tuc("/")
                 end
               end
             else
@@ -147,7 +147,7 @@ module W2uconv
     shad = false
     ng = false
     g = false
-    shad = arg.rindex('|') == arg.length-1  # is shad last character ?
+    shad = arg.rindex('/') == arg.length-1  # is shad last character ?
     if shad
       new_arg = arg[0..arg.length-2]        # arg without the shad.rb
       ng = new_arg[new_arg.length-2..new_arg.length-1] == 'ng'
